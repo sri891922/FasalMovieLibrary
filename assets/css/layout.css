@@ -312,15 +312,17 @@ input[type="checkbox"] {
     width: 1%;
 }
 button#share-playlist:hover{
-    background-color: #4CAF50;
+    background-color: rgb(235, 221, 221);
+    color: black;
     cursor: pointer;
 }
 
 button#share-playlist{
-    display:flex;
-    float:right;
+    display:inline-block;
+    width: 80px;
+    margin-left: 20px;
     color:white;
-    background: transparent;
+    background: red;
     margin-right: 10px;
     margin-bottom: 6px;
 }
