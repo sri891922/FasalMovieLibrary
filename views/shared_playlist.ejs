@@ -1,0 +1,72 @@
+<!-- shared_playlist.ejs -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    th{
+      padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
+     td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #E50914;
+    }
+    tr:hover {
+      /* background-color: #E50914; */
+      color: black;
+      th,td{
+        padding: 8px;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <center><h1>Shared Playlist by <%=user.name %></h1></center>
+    <br/>
+    <table border="4">
+      <thead>
+        <tr>
+          <th>Movie</th>
+          <th>Poster</th>
+          <th>Year</th>
+          <th>Visibility</th>
+          <th>Created by</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if (movies.length > 0) { %>
+          <% movies.forEach(function(movie) { %>
+            <tr>
+              <td><%= movie.movie %></td>
+              <td>
+                <img class="tbimg" src="<%= movie.poster%>">
+              </td>
+              <td><%= movie.year %></td>
+              <td><%= movie.visibility %></td>
+              <td><%= user.name%></td>
+            </tr>
+          <% }); %>
+        <% } else { %>
+          <tr>
+            <td colspan="3">No movies found in this playlist.</td>
+          </tr>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

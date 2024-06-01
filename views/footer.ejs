@@ -1,0 +1,51 @@
+<!-- footer.ejs -->
+<style>
+    /* styles.css */
+
+.site-footer {
+    /* background-color:red; */
+    text-align: center;
+    font-size: 14px;
+    color: #fff; /* Changed text color to white for better contrast */
+    padding: 20px 0; /* Added padding for spacing */
+}
+
+.site-footer p {
+    margin: 0;
+}
+
+.site-footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.site-footer ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.site-footer a {
+    text-decoration: none;
+    color: #fff; /* Changed link color to white */
+    transition: color 0.3s; /* Added smooth color transition on hover */
+}
+
+.site-footer a:hover {
+    color: #E50914; /* Hover color matches the background color */
+}
+
+/* Add more specific styling as needed */
+</style>
+<footer class="site-footer">
+    <div class="container">
+        <div class="footer-content">
+            <p>© <%= new Date().getFullYear() %> Fasal &nbsp;& Developed by Srikanth Godavari</p>
+            <ul class="footer-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="https://github.com/srikanth30510">GitHub</a></li>
+                <li><a href="https://srikanth30510.github.io/Portfolio/">Portfolio</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+        </div>
+    </div>
+</footer>

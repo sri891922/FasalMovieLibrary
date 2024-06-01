@@ -1,0 +1,58 @@
+<style>
+     .signin-container h1{
+    margin-right: 50%;
+    padding: 20px;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.signin-container {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width:40%;
+    margin-left: 30%;
+    margin-top: 5%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 64%;
+    margin-left: 15%;
+    padding: 15px;
+    background-color: transparent;
+    border: 1px solid white;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    width: 15%;
+    margin-left: 40%;
+}
+</style>
+<div class="signin-container">
+    <h1>Sign In</h1>
+    <form  action="/users/createsession" method="post">
+        <input type="text" id="email" name="email" placeholder="Enter your email">
+        <input type="password" id="password" name="password" placeholder="Enter your password">
+        <button type="submit">Sign In</button>
+    </form>
+</div>
