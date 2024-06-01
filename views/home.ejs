@@ -136,7 +136,9 @@
 
 </div>
 <%if (locals.user) {%>
-<center><h1 style="font-size: 30px; margin-bottom: 20px; margin-top: 10px;">Your Playlist</h1></center>
+<center><h1 style="font-size: 30px; margin-bottom: 20px; margin-top: 10px;">Your Playlist
+<button id="share-playlist">Share</button>
+<input type="hidden" id="user-id" value="<%= user._id %>"></h1></center>
 <%}%>
 <div class="movie-grid">
   <% for (list of movies) { %>
