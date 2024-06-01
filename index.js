@@ -58,6 +58,10 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(passport.setAuthenticatedUser);
+app.use((req, res, next) => {
+    res.locals.req = req;
+    next();
+  });
 
 app.use('/',require('./routes'));
 
