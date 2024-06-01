@@ -97,6 +97,14 @@
             <p>Note: Please login to create playlist, even then you can search movie without login</p>
         </div>
     <%}%> 
+    <% if (locals.user) { %>
+      <% const userMovies = movies.filter(movie => movie.user.id === locals.user.id); %>
+      <% if (userMovies.length == 0) {%>
+      <div id="note">
+        <h1 id="mo">Your Playlist is empty, search to add movies</h1>
+        <p>Search for movies and add them to your playlist</p>
+      </div>
+      <%}%><%}%>
     <main>
         <div class="search-container">
             <input type="text" placeholder="Enter Movie Name" id="movie-name" required>
@@ -142,6 +150,7 @@
 <button id="share-playlist">Share</button>
 <input type="hidden" id="user-id" value="<%= user._id %>"></h1></center>
 <%}%><%}%>
+
 <div class="movie-grid">
   <% for (list of movies) { %>
       <% if (locals.user && locals.user.id == list.user.id) { %>
