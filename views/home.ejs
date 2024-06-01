@@ -135,11 +135,13 @@
     
 
 </div>
-<%if (locals.user) {%>
+<% if (locals.user) { %>
+<% const userMovies = movies.filter(movie => movie.user.id === locals.user.id); %>
+<% if (userMovies.length > 0) {%>
 <center><h1 style="font-size: 30px; margin-bottom: 20px; margin-top: 10px;">Your Playlist
 <button id="share-playlist">Share</button>
 <input type="hidden" id="user-id" value="<%= user._id %>"></h1></center>
-<%}%>
+<%}%><%}%>
 <div class="movie-grid">
   <% for (list of movies) { %>
       <% if (locals.user && locals.user.id == list.user.id) { %>
