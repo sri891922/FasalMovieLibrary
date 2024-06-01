@@ -84,5 +84,14 @@ function showDetails(info) {
 document.getElementById('share-playlist').addEventListener('click', function() {
   const userId = document.getElementById('user-id').value;
   const shareLink = `${window.location.origin}/movies/shared/${userId}`;
-  prompt('Share this link:', shareLink);
+
+  // Copy the share link to the clipboard
+  navigator.clipboard.writeText(shareLink)
+    .then(() => {
+      alert('Share link copied to clipboard!');
+    })
+    .catch((error) => {
+      console.error('Failed to copy share link: ', error);
+      prompt('Share this link:', shareLink);
+    });
 });
