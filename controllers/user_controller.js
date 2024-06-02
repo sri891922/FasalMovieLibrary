@@ -17,7 +17,12 @@ module.exports.signin = function(req,res){
     if(req.isAuthenticated()){
         return res.redirect('/');
     }
-    alert('SignUp first or Wrong password');
+    notifier.notify({
+        title: 'No User',
+        message: 'SignUp first!',
+        sound: true,
+        wait: true
+      });
     return res.render('signin', {
         title: "SignIn"
     })
